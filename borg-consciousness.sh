@@ -9,6 +9,7 @@ export BORG_PASSPHRASE='redacted'
 n_days=3                  # if backup was less recent than n_days, alert administrator 
 heartbeat_url="https://hc-ping.com/redacted" # using healthchecks.io for email and Telegram alerts 
 fail_url="https://hc-ping.com/redacted/fail"
+make_it_fail=0                  # set to 1 to simulate an old backup and generate an alert 
 
 die()
 {
@@ -27,7 +28,11 @@ is_num()                        # returns (exits) 0 if passed a valid integer
 }
 
 last=`borg list --last 10 --format "{archive} {end} {NEWLINE}" | grep --invert-match checkpoint | tail -1` # get the last 10 backups from the repo, filter out checkpoints, get last one
-#last="chisel-2019-10-10T03:51:01 Thu, 2019-10-4 06:59:16" # uncomment to simulate an old backup 
+
+if (( $make_it_fail )); then
+    last="qwho-1989-05-08T11:11:11 Thu, 1989-05-08 11:11:11" # simulate an old backup
+fi
+
 echo Last backup: $last
 
 last_date=$( echo $last | cut -d " " -f 3 )
