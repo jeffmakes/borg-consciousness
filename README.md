@@ -1,0 +1,1 @@
+This script looks at a borg backup repository uses "borg list" to figure out the date of the most recent successful backup. If that was longer than N days ago, an email/whatever alert is sent to the administrator by http request to healthchecks.io.
