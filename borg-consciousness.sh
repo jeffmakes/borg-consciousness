@@ -9,7 +9,7 @@ export BORG_PASSPHRASE='redacted'
 n_days=3                  # if backup was less recent than n_days, alert administrator 
 heartbeat_url="https://hc-ping.com/redacted" # using healthchecks.io for email and Telegram alerts 
 fail_url="https://hc-ping.com/redacted/fail"
-make_it_fail=0                  # set to 1 to simulate an old backup and generate an alert 
+make_it_fail=0                  # set to 1 to test your alerts by simulating an old backup 
 
 die()
 {
