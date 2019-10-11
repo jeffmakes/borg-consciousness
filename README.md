@@ -6,6 +6,8 @@ This little bash script queries a repo to see when the last successful backup to
 
 borg-consciousness.sh sends heartbeats if a recent backup is detected, so even if borg-consciousness.sh itself fails you'll hear about it.
 
+You can run borg-consciousness.sh from anywhere without modifying it. I run it on a cloud VM - *hostA*, which queries rsync.net server *hostB* to check for backups from *laptopC* and *hostA*. To check multiple backup repos, just copy the script and point each copy at a different repo. 
+
 ## Usage
 
 * Edit the `redacted` markers to point the script at your repo. 
