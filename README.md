@@ -9,7 +9,7 @@ borg-consciousness.sh sends heartbeats if a recent backup is detected, so even i
 ## Usage
 
 * Edit the `redacted` markers to point the script at your repo. 
-* Edit the `heartbeat_url` and `fail_url` to point to your alert service (Register an account on [healthchecks.io](https://healthchecks.io).
+* Edit the `heartbeat_url` and `fail_url` to point to your alert service (Register an account on [healthchecks.io](https://healthchecks.io)).
 * Put the script somewhere sensible, and call it with cron. I put a symlink in /etc/cron.daily
 * Test it - set the `make_it_fail` variable to simulate an old backup and receive an alert.
 * Relax in the knowledge that if your backups fail, you'll hear about it.
