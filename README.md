@@ -2,7 +2,7 @@
 
 Assimilate yourself with your Borg backups; perceive their silent deaths.
 
-This little bash script queries a repo to see when the last successful backup took place. It alerts you if one hasn't run for a while. It uses [healthchecks.io](https://healthchecks.io) for alers, so you can get emails/Telgram messages/tweets/whatever. If you want, you can easily substitute a different alert service - borg-consciousness.sh just sends http requests.
+This little bash script queries a repo to see when the last successful backup took place. It alerts you if one hasn't run for a while. It uses [healthchecks.io](https://healthchecks.io) for alerts, so you can get emails/Telgram messages/tweets/whatever. If you want, you can easily substitute a different alert service - borg-consciousness.sh just sends http requests.
 
 borg-consciousness.sh sends heartbeats if a recent backup is detected so, even if borg-consciousness.sh itself fails, you'll hear about it.
 
