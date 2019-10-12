@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Setting this, so the repo does not need to be given on the commandline:
-export BORG_REPO=redacted
-export BORG_REMOTE_PATH=redacted
-# Setting this, so you won't be asked for your repository passphrase:
+export BORG_REPO=user@server.domain:my-repo-name # point to your borg repo 
+export BORG_REMOTE_PATH=/usr/local/bin/borg1/borg1 # point to your borg executable 
 export BORG_PASSPHRASE='redacted'
 
 n_days=3                  # if backup was less recent than n_days, alert administrator 
