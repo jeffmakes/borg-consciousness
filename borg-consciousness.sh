@@ -29,11 +29,7 @@ is_num()                        # returns (exits) 0 if passed a valid integer
     fi
 }
 
-last=`borg list --last 10 --format "{archive} {end} {NEWLINE}" | grep --invert-match checkpoint | tail -1` # get the last 10 backups from the repo, filter out checkpoints, get last one
-
-#If you are using BusyBox (e.g. inside borgmatic docker), you can comment the above command and use the following instead:
-#last=`borg list --last 10 --format "{archive} {end} {NEWLINE}" | grep -v checkpoint | tail -1` # get the last 10 backups from the repo, filter out checkpoints, get last one
-
+last=`borg list --last 10 --format "{archive} {end} {NEWLINE}" | grep -v checkpoint | tail -1` # get the last 10 backups from the repo, filter out checkpoints, get last one
 
 if (( $make_it_fail )); then
     last="qwho-1989-05-08T11:11:11 Thu, 1989-05-08 11:11:11" # simulate an old backup
